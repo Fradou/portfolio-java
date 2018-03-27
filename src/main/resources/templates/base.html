@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org"
+>
+	<head>
+		<!-- General -->
+		<title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE">Alexandre Fradet</title>
+		<meta charset="utf-8">
+		<meta name="author" content="AF">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+		<!-- Styles and scripts -->
+		<link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+		<link rel="shortcut icon" type="image/x-icon" th:href="@{/images/favicon.ico}">
+		<script type="text/javascript" th:src="@{js/main.js}"></script>
+	</head>
+
+	<body>
+	
+		<div th:replace="fragments/header :: header">Header will be there</div>
+		
+		<section layout:fragment="content">Here will be the content</section>
+		
+		<div th:replace="fragments/footer :: footer">Footer will be put there</div>
+		
+	</body>
+</html>
