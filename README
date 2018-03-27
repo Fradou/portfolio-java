@@ -1,4 +1,1 @@
-Installation npm & angular :
--> mvnw generate-resources
--> npm.cmd install @angular/cli
--> Utiliser ng .cmd pour les commandes angular.
+Building a single page portfolio !
