@@ -18,10 +18,12 @@ import lombok.Setter;
 public class Skill {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	
 	private String name;
+	
+	private int value;
 	
 	@ElementCollection
 	@OrderColumn(name = "details_order")

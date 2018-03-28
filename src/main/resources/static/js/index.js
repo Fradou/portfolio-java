@@ -1,10 +1,10 @@
-var skills = [
+/**var skills = [
 	{label: 'Java', value:85},
 	{label: 'Php', value:65},
 	{label: 'JavaScript', value:75},
 	{label: 'Html / Css', value:80},
 	{label: 'BDD', value:55}
-]
+]**/
 
 Vue.component('polygraph', {
 	props: ['skills'],

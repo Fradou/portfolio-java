@@ -29,8 +29,8 @@
 		</div>
 		
 		<!-- Scripts -->
-		<script>
-			var skills = ${skills}
+		<script th:inline="javascript">
+			var skills = /*[[${skills}]]*/ "";
 		</script>
 		<script type="text/javascript" th:src="@{js/index.js}"></script>	
 	</div>

@@ -18,7 +18,6 @@ public class MainController {
 	public String index(Model model) {
 		
 		model.addAttribute("skills", sManager.findAll());
-		
 		return "index";
 	}
 }
