@@ -24,7 +24,7 @@
 
         <!-- template for the axis label component. -->
         <script type="text/x-template" id="axis-label-template">
-            <text :x="point.x" :y="point.y">{{skill.name}}</text>
+            <text :x="point.x" :y="point.y" @click="labelSelect">{{skill.name}}</text>
         </script>
     </th:block>
 </body>

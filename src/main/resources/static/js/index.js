@@ -27,6 +27,11 @@ Vue.component('polygraph', {
 				total: Number
 			},
 			template: '#axis-label-template',
+			methods: {
+				labelSelect: function(){
+					bus.$emit("labelSelected", this.index);
+				}
+			},
 			computed: {
 				point: function(){
 					return valueToPoint(
@@ -55,11 +60,20 @@ function valueToPoint (value, index, total) {
 	}
   }
 
+var bus = new Vue();
+
 window.onload = function () {
     var main = new Vue({
 		el: '#skillDiag',
 		data: {
 			skills: skills
+		},
+		created() {
+			bus.$on('labelSelected', function (index) {
+				var skill = self.skills[index];
+				self.skills.splice(index, 1);
+				self.skills.unshift(skill);
+			})
 		}
 	})
 }
