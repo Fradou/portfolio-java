@@ -1,11 +1,3 @@
-/**var skills = [
-	{label: 'Java', value:85},
-	{label: 'Php', value:65},
-	{label: 'JavaScript', value:75},
-	{label: 'Html / Css', value:80},
-	{label: 'BDD', value:55}
-]**/
-
 Vue.component('polygraph', {
 	props: ['skills'],
 	template: '#polygraph-template',
@@ -49,7 +41,7 @@ Vue.component('polygraph', {
 function valueToPoint (value, index, total) {
 	var x     = 0
 	var y     = -value * 0.8
-	var angle = Math.PI * 2 / total * index
+	var angle = Math.PI * 2 / total * index + 90
 	var cos   = Math.cos(angle)
 	var sin   = Math.sin(angle)
 	var tx    = x * cos - y * sin + 100
@@ -66,11 +58,13 @@ window.onload = function () {
     var main = new Vue({
 		el: '#skillDiag',
 		data: {
-			skills: skills
+			skills: skills,
+			skillSelected: null
 		},
 		created() {
 			bus.$on('labelSelected', function (index) {
 				var skill = self.skills[index];
+				this.skillSelected = skill;
 				self.skills.splice(index, 1);
 				self.skills.unshift(skill);
 			})
