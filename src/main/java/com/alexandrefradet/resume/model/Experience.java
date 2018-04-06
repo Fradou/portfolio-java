@@ -21,6 +21,8 @@ public class Experience {
 	
 	private String company;
 	
+	private String companyLogo;
+	
 	private String position;
 	
 	private LocalDate startDate;

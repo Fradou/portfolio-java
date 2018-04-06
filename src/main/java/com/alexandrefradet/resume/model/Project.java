@@ -1,9 +1,14 @@
 package com.alexandrefradet.resume.model;
 
+import java.time.LocalDate;
+import java.util.List;
+
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OrderColumn;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -16,4 +21,20 @@ public class Project {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
+	
+	private String name;
+	
+	private String description;
+	
+	private String url;
+	
+	private String img;
+	
+	private LocalDate startDate;
+	
+	private LocalDate endDate;
+	
+	@ElementCollection
+	@OrderColumn(name = "details_order")
+	List<String> environmentDetails;
 }
