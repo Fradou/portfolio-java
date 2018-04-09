@@ -19,5 +19,9 @@ public class Content {
 	
 	private String title;
 	
-	private String body; 
+	private String subtitle;
+	
+	private String body;
+	
+	private String url;
 }
