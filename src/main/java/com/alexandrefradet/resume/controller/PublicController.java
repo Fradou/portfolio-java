@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alexandrefradet.resume.manager.ContentManager;
@@ -50,7 +51,7 @@ public class PublicController {
 	}
 	
 	@GetMapping("contents")
-	public List<Content> getContent(){
-		return cManager.findAll();
+	public List<Content> getContent(@RequestParam(required=true) String label){
+		return cManager.findByLabel(label);
 	}
 }

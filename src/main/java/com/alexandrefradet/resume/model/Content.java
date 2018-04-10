@@ -17,6 +17,8 @@ public class Content {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
+	private String label;
+	
 	private String title;
 	
 	private String subtitle;
