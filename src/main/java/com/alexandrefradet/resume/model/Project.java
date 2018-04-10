@@ -3,6 +3,7 @@ package com.alexandrefradet.resume.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,6 +25,7 @@ public class Project {
 	
 	private String name;
 	
+	@Column(columnDefinition = "text")
 	private String description;
 	
 	private String url;
