@@ -1,9 +1,6 @@
 package com.alexandrefradet.resume.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import lombok.Data;
 
@@ -12,7 +9,7 @@ import lombok.Data;
 public class Content {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	
 	private String label;
@@ -20,7 +17,8 @@ public class Content {
 	private String title;
 	
 	private String subtitle;
-	
+
+	@Column(columnDefinition = "text")
 	private String body;
 	
 	private String url;

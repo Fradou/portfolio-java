@@ -1,11 +1,9 @@
 package com.alexandrefradet.resume.model;
 
 import java.time.LocalDate;
+import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +14,7 @@ import lombok.Setter;
 public class Experience {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	
 	private String company;
@@ -28,6 +26,10 @@ public class Experience {
 	private LocalDate startDate;
 	
 	private LocalDate endDate;
-	
+
+	@Column(columnDefinition = "text")
 	private String description;
+
+	@OneToMany(mappedBy = "experience")
+	private List<Mission> missions;
 }
